@@ -1,0 +1,30 @@
+1. pip install Django
+    a.  This installs Django or you can install a specific version by typing ex. pip install Django==1.11.9
+    b.  pip should be installed into a virtualenv because it installs globally and different versions could 
+        be used by different applications changing it globally could be disastrous and so each time you install it
+        it should be the version you want within its on virtualenv you are working on. 
+    
+2. pip list
+    a.  This displays a list of packages that are installed pip has access to.
+
+3. pip install Django (again)
+    a.  This shows me where pip is installing at
+
+4. pip freeze
+    a. this freezes all the current requirements and you can save the list of what specfic 
+        versions you currently have in case you need to revert back to this moment whenever 
+        you are making big changes.
+
+5. pip freeze > requirements.txt
+    a.  Creates that file with all of my installed packages and their versions.
+
+6. pip show Django
+    a.  Shows the information about what you have listed if it is an installed package. 
+
+7. pip uninstall Django
+    a.  gives a list of all the packages that will be uninstalled and asks for confirmation 
+        before deleting all of them 
+
+8. pip search Flask
+    a.  looks through all your packages to find Flask or whatever else you are searching for 
+        and returns the list.

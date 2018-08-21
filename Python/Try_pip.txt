@@ -1,3 +1,5 @@
+Try Pip Assignment
+
 1. pip install Django
     a.  This installs Django or you can install a specific version by typing ex. pip install Django==1.11.9
     b.  pip should be installed into a virtualenv because it installs globally and different versions could 

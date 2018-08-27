@@ -11,3 +11,11 @@ for count in range (1, 1001, 2):
 # Print the multiples of 5 between 5 - 1,000,000
 for count in range (5, 1000001, 5):
     print count
+
+# Sum List
+# Create a program that prints the sum of all the values in the list: a = [1, 2, 5, 10, 255, 3]
+new_list = [1, 2, 5, 10, 255, 3]
+sum = 0; 
+for i in new_list:
+    sum += i
+print sum

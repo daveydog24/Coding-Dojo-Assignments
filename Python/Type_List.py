@@ -42,7 +42,6 @@ l = ['magical','unicorns']
 '''
 
 def Type_List(test_list): 
-    list_type = ''
     final_sum = 0
     final_string = ''
     int_test = False
@@ -66,13 +65,14 @@ def Type_List(test_list):
     else:
         list_type = "The list you entered is of int type"
 
+    # prints the statement 
     print list_type
     if final_sum:
         print "Sum:", final_sum
     if final_string:
         print "String: " + final_string
 
-
+# sample lists from online assignments/answers
 mixed_list = ['magical unicorns',19,'hello',98.98,'world']
 integer_list = [1,2,3,4,5]
 string_list = ["Spiff", "Moon", "Robot"]

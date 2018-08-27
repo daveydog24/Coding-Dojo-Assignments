@@ -37,7 +37,7 @@ eL = []
 spL = ['name','address','phone number','social security number']
 
 # where you can set any of the test variables above 
-Tester_Variable = sI
+Tester_Variable = bS
 
 # Assignment Answer
 Current_Type = type(Tester_Variable)
@@ -47,3 +47,8 @@ if Current_Type is int:
         print "That's a big number!"
     else:
         print "That's a small number"
+elif Current_Type is str:
+    if len(Tester_Variable) >= 50:
+        print "Long sentence."
+    else: 
+        print "Short sentence."

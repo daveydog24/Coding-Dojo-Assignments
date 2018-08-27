@@ -41,4 +41,42 @@ l = ['magical','unicorns']
 "String: magical unicorns"
 '''
 
+def Type_List(test_list): 
+    list_type = ''
+    final_sum = 0
+    final_string = ''
+    int_test = False
+    string_test = False 
 
+    # turns the correct switches on to identify the type of list  
+    # loops through the list and adds up all the integers and/or concatenates the strings in the list 
+    for value in test_list:
+        if isinstance(value, int) or isinstance(value, float):
+            final_sum += value
+            int_test = True
+        elif isinstance(value, str):
+            final_string += (value + " ")
+            string_test = True
+
+    # identifies which string to print based on the list type
+    if int_test and string_test:
+        list_type = "The list you entered is of mixed type"
+    elif not int_test and string_test:
+        list_type = "The list you entered is of string type"
+    else:
+        list_type = "The list you entered is of int type"
+
+    print list_type
+    if final_sum:
+        print "Sum:", final_sum
+    if final_string:
+        print "String: " + final_string
+
+
+mixed_list = ['magical unicorns',19,'hello',98.98,'world']
+integer_list = [1,2,3,4,5]
+string_list = ["Spiff", "Moon", "Robot"]
+
+Type_List(mixed_list)
+Type_List(integer_list)
+Type_List(string_list)

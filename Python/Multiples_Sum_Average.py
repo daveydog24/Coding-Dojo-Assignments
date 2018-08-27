@@ -14,8 +14,17 @@ for count in range (5, 1000001, 5):
 
 # Sum List
 # Create a program that prints the sum of all the values in the list: a = [1, 2, 5, 10, 255, 3]
-new_list = [1, 2, 5, 10, 255, 3]
-sum = 0; 
-for i in new_list:
+Sum_list = [1, 2, 5, 10, 255, 3]
+sum = 0
+for i in Sum_list:
     sum += i
 print sum
+
+# Average List
+# Create a program that prints the average of the values in the list: a = [1, 2, 5, 10, 255, 3]
+Average_list = [1, 2, 5, 10, 255, 3]
+sum = 0
+length = len(Average_list)
+for i in Average_list:
+    sum += i
+print (sum/length)

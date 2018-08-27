@@ -36,10 +36,11 @@ lL = [4,34,22,68,9,13,3,5,7,9,2,12,45,923]
 eL = []
 spL = ['name','address','phone number','social security number']
 
-# where you can set any of the test variables above 
+# Where you can set any of the test variables above 
 Tester_Variable = bS
 
 # Assignment Answer
+# Checks if the testing variable is an integer, string or list and then prints the general size of it 
 Current_Type = type(Tester_Variable)
 
 if Current_Type is int:
@@ -47,8 +48,13 @@ if Current_Type is int:
         print "That's a big number!"
     else:
         print "That's a small number"
-elif Current_Type is str:
+elif Current_Type is str: 
     if len(Tester_Variable) >= 50:
         print "Long sentence."
     else: 
         print "Short sentence."
+elif isinstance(Tester_Variable, list):
+    if len(Tester_Variable) >= 10:
+        print "Big list!"
+    else: 
+        print "Short list."  

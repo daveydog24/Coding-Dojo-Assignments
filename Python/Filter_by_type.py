@@ -35,3 +35,15 @@ mL = [3,5,7,34,3,2,113,65,8,89]
 lL = [4,34,22,68,9,13,3,5,7,9,2,12,45,923]
 eL = []
 spL = ['name','address','phone number','social security number']
+
+# where you can set any of the test variables above 
+Tester_Variable = sI
+
+# Assignment Answer
+Current_Type = type(Tester_Variable)
+
+if Current_Type is int:
+    if Tester_Variable >= 100:
+        print "That's a big number!"
+    else:
+        print "That's a small number"

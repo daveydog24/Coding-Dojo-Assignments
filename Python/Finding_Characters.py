@@ -6,10 +6,19 @@
 Write a program that takes a list of strings and a string containing a single 
 character, and prints a new list of all the strings containing that character.
 
-'''
+example: 
 
 # input
 word_list = ['hello','world','my','name','is','Anna']
 char = 'o'
 # output
 new_list = ['hello','world']
+
+'''
+
+def Find_Character(char, arr):
+    for x in arr:
+        print x;
+        print char
+
+Find_Character(char, word_list)

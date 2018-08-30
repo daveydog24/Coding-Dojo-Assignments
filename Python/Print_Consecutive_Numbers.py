@@ -1,3 +1,25 @@
+'''
+Print Consecutive Numbers Assignment
+Created By: David Wukelic
+Utilizing tab spacing
+
+
+Read an integer n
+
+Without using any string methods, try to print the following:
+
+Note that "" represents the values in between.
+
+Example:
+
+Input Format
+3 
+
+Output Format
+123 
+
+'''
+
 import math
 if __name__ == '__main__':
     n = int(input())

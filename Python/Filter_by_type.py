@@ -1,8 +1,8 @@
-# Filter by Type Assignment  
-# Created By: David Wukelic
-# Utilizing tab spacing
-
 '''
+Filter by Type Assignment  
+Created By: David Wukelic
+Utilizing tab spacing
+
 Write a program that, given some value, tests that value for its type. 
 Here's what you should do for each type:
 

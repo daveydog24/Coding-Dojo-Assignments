@@ -1,8 +1,8 @@
-# Compare List Assignment  
-# Created By: David Wukelic
-# Utilizing tab spacing
-
 '''
+Compare List Assignment  
+Created By: David Wukelic
+Utilizing tab spacing
+
 Write a program that compares two lists and prints a message depending on if the 
 inputs are identical or not.
 
@@ -12,6 +12,8 @@ print "The lists are not the same." Try the following test cases for lists one a
 
 '''
 
+# compares each value side by side in two lists and at any point 
+# one value is different than the value in the other list it returns false
 def Compare_Lists(first_list, second_list):
     compared_list_equal = True;
     if len(first_list) == len(second_list):
@@ -20,7 +22,8 @@ def Compare_Lists(first_list, second_list):
                 compared_list_equal = False;
     else:
         compared_list_equal = False;
-        
+    
+    # checks the status of the compare checks and returns information based on true/false
     if compared_list_equal:
         print "The lists are the same."
         return True;

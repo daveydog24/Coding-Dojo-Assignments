@@ -5,24 +5,24 @@ Utilizing tab spacing
 
 
 '''
-n = 5
-arr = map(int, input().split())
+# n = 5
+# arr = map(int, input().split())
+arr = [57, 57, -57, 57]
 first = None
 second = None
 
 for value in arr:
-    print value
     if not first:
         first = value
-    if value >= first:
+    if value > first:
         first = value
+    elif not second:
+        second = value
+    if value < 0:
+        if value <= second and value != first:
+            second = value
     else:
-        if not second:
+        if value >= second and value != first:
             second = value
-        if value <= first and value >= second:
-            second = value
-        
-    # if value == first and value != second:
-    #     second = value
     
 print (second)

@@ -1,0 +1,9 @@
+<div>
+    <nav>
+        <a [routerLink]="['browse']">Browse</a> | 
+        <a [routerLink]="['listings']">My listings</a> |
+        <a [ngStyle]="{'text-decoration': 'underline'}" (click)="logOff($event)">Log off</a>
+    </nav>
+</div>
+<!-- css link styling is still not right -->
+<!-- can we check session everytime instead of seeing if user is logged in through service -->

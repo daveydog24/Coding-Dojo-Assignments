@@ -25,5 +25,46 @@ print (highest)
 
 '''
 
-n = 5
-arr = [-10, 0, 10]
+# multiplier = 3
+# def multiplying(num):
+#     return num * multiplier
+
+# arr = [-10, 0, 10]
+# x = map(multiplying, arr)
+# print x
+
+# for i in range(len(arr)):
+#     print arr[i]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def Kim(*args):
+    test_string = ''
+    test_int = 0
+    for i in args:
+        if type(i) is str:
+            test_string += str(i) + " "
+        if type(i) is int:
+            test_int += i
+        if type(i) is list:
+            for value in i:
+                test
+                Kim(value)
+    print ("string: {}, sum: {}".format(test_string, test_int))
+    
+
+Kim(1)
+Kim(1,2,3)
+Kim(1,2,3,"i love kim", "hey babe", 5)
+Kim(1,2,3,"i love kim", "hey babe", 5, [1,2,3,4,5])

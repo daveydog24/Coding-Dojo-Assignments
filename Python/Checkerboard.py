@@ -21,4 +21,4 @@ def Print_Symbol(rows, stars_in_row, symbol):
         print printed
 
 # define how many rows and stars you want 
-Print_Symbol(10, 10, '**')
+Print_Symbol(1000, 8, 'I love Kim <3')

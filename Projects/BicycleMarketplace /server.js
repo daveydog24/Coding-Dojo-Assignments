@@ -34,10 +34,3 @@ app.use(logger('dev'))
   .use('/api', require('./server/routes'))
   .use(require('./server/routes/catch-all.routes'))
   .listen(port, () => console.log(`Express listening on port ${ port }`));
-
-// edit these out possibly......
-//   .use('/users', require('./server/routes/user.routes')) 
-  // connects the base /users route from the path given
-//   .use('/bikes', require('./server/routes/bike.routes')) 
-  // connects the base /bikes route from the path given
-//    

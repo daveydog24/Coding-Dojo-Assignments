@@ -61,6 +61,6 @@ for x in enumerate(n):
         for i in scores:
             total += i
             count += 1
-            
-print total
-print count
+        average = (total / count)
+        
+print average

@@ -44,3 +44,12 @@ Sample Output 1
     26.50
 
 '''
+n = ['Krishna 67 68 69','Arjun 70 98 63','Malika 52 56 60', 'Malika']
+
+student_marks = {}
+
+for x in n:
+    line = x.split()
+    name = line[0]
+    scores = line[1:]
+    scores = list(map(float, scores))

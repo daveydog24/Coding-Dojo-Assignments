@@ -45,8 +45,9 @@ Sample Output 1
 
 '''
 a = ['Krishna 67 68 69','Arjun 70 98 63','Malika 52 56 60', 'Malika']
+b = ['Harsh 25 26.5 28', 'Anurag 26 28 30', 'Harsh']
 
-def find_percentage(list):
+def find_percentage(test_list):
     
     for x in enumerate(test_list):
         line = x[1].split()
@@ -63,4 +64,5 @@ def find_percentage(list):
                 count += 1
             average = (total / count)
             
-    print average
+    return average
+

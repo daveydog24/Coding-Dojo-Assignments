@@ -48,8 +48,19 @@ n = ['Krishna 67 68 69','Arjun 70 98 63','Malika 52 56 60', 'Malika']
 
 student_marks = {}
 
-for x in n:
-    line = x.split()
+for x in enumerate(n):
+    line = x[1].split()
     name = line[0]
-    scores = line[1:]
-    scores = list(map(float, scores))
+
+# makes sure that the last entry doesnt actually run numbers it just stuff only on the line we want. AKA minimal data
+    if name == n[-1] and (x[0] != (len(n)-1)):
+        scores = line[1:]
+        scores = list(map(float, scores))
+        total = 0
+        count = 0
+        for i in scores:
+            total += i
+            count += 1
+            
+print total
+print count

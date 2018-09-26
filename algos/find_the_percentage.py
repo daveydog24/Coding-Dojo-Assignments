@@ -64,5 +64,7 @@ def find_percentage(test_list):
                 count += 1
             average = (total / count)
             
-    return average
+    print "{}'s got an average grade of {}% in school this quarter.".format(name, average)
 
+find_percentage(a)
+find_percentage(b)

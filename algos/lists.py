@@ -68,11 +68,10 @@ def list_actions(passed_list):
             arr.insert(slot, integer)
         elif line[0] == 'print':
             print arr
-            
-
-
-    print arr
-
+        elif line[0] == 'remove':
+            integer = line[1]
+            arr.remove(integer)
+        
         # line = i[1].split()
         # name = line[0]
         # print line

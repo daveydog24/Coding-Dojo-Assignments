@@ -65,15 +65,15 @@ def list_actions(passed_list):
 
         if action == 'insert':
             slot = int(line[1])
-            integer = line[2]
+            integer = int(line[2])
             arr.insert(slot, integer)
         elif action == 'print':
             print arr
         elif action == 'remove':
-            integer = line[1]
+            integer = int(line[1])
             arr.remove(integer)
         elif action == 'append':
-            integer = line[1]
+            integer = int(line[1])
             arr.append(integer)
         elif action == 'sort':
             arr.sort()

@@ -57,7 +57,25 @@ Sample Output 0
 x = [['insert 0 5'], ['insert 1 10'], ['insert 0 6'], ['print'], ['remove 6'], ['append 9'], ['append 1'], ['sort'], ['print'], ['pop'], ['reverse'], ['print']]
 
 def list_actions(passed_list):
-    for i in passed_list:
-        print i
+    arr = []
+    for i in enumerate(passed_list):
+        line = i[1]
+        line = line[0].split()
+
+        if line[0] == 'insert':
+            slot = int(line[1])
+            integer = line[2]
+            arr.insert(slot, integer)
+            # arr.insert((line[1]), 2)
+            # arr.insert(line[1], line[2])
+            # print line[1]
+            # print line[2]
+    print arr
+
+        # line = i[1].split()
+        # name = line[0]
+        # print line
+        # print name
+        # print i[1]
 
 list_actions(x)

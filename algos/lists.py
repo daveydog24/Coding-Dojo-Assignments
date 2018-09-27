@@ -1,5 +1,9 @@
 
 '''
+List Assignment  
+Created By: David Wukelic
+Utilizing tab spacing
+
 Consider a list (list = []). You can perform the following commands:
 
     insert i e: Insert integer at position .

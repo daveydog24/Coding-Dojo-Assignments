@@ -1,5 +1,5 @@
 '''
-Compare List Assignment  
+Find_The_Percentage Assignment
 Created By: David Wukelic
 Utilizing tab spacing
 

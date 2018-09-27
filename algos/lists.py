@@ -71,28 +71,32 @@ x = [
 
 def list_actions(passed_list):
     arr = []
-    for i in enumerate(passed_list):
-        line = i[1]
-        line = line[0].split()
-        action = line[0]
+    if len(passed_list) > 0:
+        for i in enumerate(passed_list):
+            line = i[1]
+            line = line[0].split()
+            action = line[0]
 
-        if action == 'insert':
-            slot = int(line[1])
-            integer = int(line[2])
-            arr.insert(slot, integer)
-        elif action == 'print':
-            print arr
-        elif action == 'remove':
-            integer = int(line[1])
-            arr.remove(integer)
-        elif action == 'append':
-            integer = int(line[1])
-            arr.append(integer)
-        elif action == 'sort':
-            arr.sort()
-        elif action == 'pop':
-            arr.pop()
-        elif action == 'reverse':
-            arr.reverse()
+            if len(line) > 1:
+                if action == 'insert':
+                    slot = int(line[1])
+                    integer = int(line[2])
+                    arr.insert(slot, integer)
+                elif action == 'remove':
+                    integer = int(line[1])
+                    arr.remove(integer)
+                elif action == 'append':
+                    integer = int(line[1])
+                    arr.append(integer)
+            else:
+                if action == 'print':
+                    print arr
+                elif action == 'sort':
+                    arr.sort()
+                elif action == 'pop':
+                    arr.pop()
+                elif action == 'reverse':
+                    arr.reverse()
+    return "There is no value in the given array"
             
 list_actions(x)

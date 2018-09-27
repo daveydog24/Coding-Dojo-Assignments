@@ -66,10 +66,11 @@ def list_actions(passed_list):
             slot = int(line[1])
             integer = line[2]
             arr.insert(slot, integer)
-            # arr.insert((line[1]), 2)
-            # arr.insert(line[1], line[2])
-            # print line[1]
-            # print line[2]
+        elif line[0] == 'print':
+            print arr
+            
+
+
     print arr
 
         # line = i[1].split()

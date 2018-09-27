@@ -75,7 +75,7 @@ def list_actions(passed_list):
         elif action == 'append':
             integer = line[1]
             arr.append(integer)
+        elif action == 'sort':
+            arr.sort()
             
-        
-
 list_actions(x)

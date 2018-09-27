@@ -77,5 +77,8 @@ def list_actions(passed_list):
             arr.append(integer)
         elif action == 'sort':
             arr.sort()
+        elif action == 'pop':
+            arr.pop()
+            
             
 list_actions(x)

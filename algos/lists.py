@@ -79,6 +79,7 @@ def list_actions(passed_list):
             arr.sort()
         elif action == 'pop':
             arr.pop()
-            
+        elif action == 'reverse':
+            arr.reverse()
             
 list_actions(x)

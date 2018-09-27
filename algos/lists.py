@@ -69,6 +69,23 @@ x = [
     ['print']
     ]
 
+y = [
+    ['insert 0 13'], 
+    ['insert 0 12'], 
+    ['insert 0 87'], 
+    ['insert 0 91'], 
+    ['insert 0 14'], 
+    ['print'], 
+    ['remove 12'], 
+    ['append 16'], 
+    ['append 22'], 
+    ['sort'], 
+    ['print'], 
+    ['pop'], 
+    ['reverse'], 
+    ['print']
+    ]
+
 def list_actions(passed_list):
     arr = []
     if len(passed_list) > 0:
@@ -90,7 +107,7 @@ def list_actions(passed_list):
                     arr.append(integer)
             else:
                 if action == 'print':
-                    print arr
+                    print "arr = {}".format(arr)
                 elif action == 'sort':
                     arr.sort()
                 elif action == 'pop':
@@ -100,3 +117,4 @@ def list_actions(passed_list):
     return "There is no value in the given array"
             
 list_actions(x)
+list_actions(y)

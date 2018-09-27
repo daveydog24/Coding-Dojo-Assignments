@@ -61,21 +61,21 @@ def list_actions(passed_list):
     for i in enumerate(passed_list):
         line = i[1]
         line = line[0].split()
+        action = line[0]
 
-        if line[0] == 'insert':
+        if action == 'insert':
             slot = int(line[1])
             integer = line[2]
             arr.insert(slot, integer)
-        elif line[0] == 'print':
+        elif action == 'print':
             print arr
-        elif line[0] == 'remove':
+        elif action == 'remove':
             integer = line[1]
             arr.remove(integer)
+        elif action == 'append':
+            integer = line[1]
+            arr.append(integer)
+            
         
-        # line = i[1].split()
-        # name = line[0]
-        # print line
-        # print name
-        # print i[1]
 
 list_actions(x)

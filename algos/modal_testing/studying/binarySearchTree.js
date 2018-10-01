@@ -8,36 +8,6 @@ function BST() {
     this.root = null;
 }
 
-BST.prototype.isBST = function (node) {
-    if (!node) {
-        return true; 
-    }
- 
-    if (node.left != null && node.left.value > node.value) { 
-        return false;
-    }
- 
-    if (node.right !=null && node.right.value < node.value) {
-        return false;
-    }
- 
-    if (!isBST(node.left) || !isBST(node.right)) {
-        return false;
-    }
- 
-    return true;  
-}
-
-BST.prototype.height = function (node) {
-    if (!node) {
-        return 0;
-    }
-    var leftHeight = height(node.left);
-    var rightHeight = height(node.right);
- 
-    return Math.max(leftHeight, rightHeight) + 1;
-}
-
 BST.prototype.push = function(val) {
     var root = this.root;
  
@@ -68,8 +38,56 @@ BST.prototype.push = function(val) {
     }
 }
 
+BST.prototype.height = function () {
+    current = this.root;
+    if (!current) {
+        return 0;
+    }
+
+    var leftHeight = current.left;
+    var rightHeight = current.right;
+
+    leftCount = 1;
+    rightCount = 1; 
+    while (leftHeight.left){
+        leftHeight = leftHeight.left
+        leftCount++;
+        console.log('counting');
+    }
+    while (rightHeight.right){
+        rightHeight = rightHeight.right
+        rightCount++;
+    }
+
+    if (leftHeight > rightHeight){
+        return leftCount + 1;
+    } else {
+        return rightCount + 1;
+    }
+}
+
+BST.prototype.isBST = function (current) {
+    if (!node) {
+        return true; 
+    }
+ 
+    if (node.left != null && node.left.value > node.value) { 
+        return false;
+    }
+ 
+    if (node.right !=null && node.right.value < node.value) {
+        return false;
+    }
+ 
+    if (!isBST(node.left) || !isBST(node.right)) {
+        return false;
+    }
+ 
+    return true;  
+}
+
 x = new BST()
-console.log(x);
+// console.log(x);
 
 x.push(10);
 x.push(2);
@@ -81,6 +99,7 @@ x.push(12);
 x.push(7);
 x.push(1);
 
-console.log(x);
+// console.log(x);
+console.log(x.height());
 
     

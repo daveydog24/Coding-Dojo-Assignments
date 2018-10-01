@@ -1,4 +1,5 @@
-information = [
+// add more data here for more items
+data = [
     {
         name: "iPhone",
         url: "https://amp.businessinsider.com/images/59c29dcb2488492b395ca43e-960-623.jpg",

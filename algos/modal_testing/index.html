@@ -4,26 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <title>Modal Testing</title>
     <script type="text/javascript" src="main.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
-            data = information;
+            items = data;
 	
-            for (x of information){
-                $('#buttons').append(`<button type="button" onclick="openModal('${x.name}')" name="${x.name}">${x.name}</button>`);
+            for (item of items){
+                $('#buttons').append(`<button type="button" onclick="openModal('${item.name}')" name="${item.name}">${item.name}</button>`);
                 $('#theModals').append(`
-                    <div id="${x.name}" class="modal">
+                    <div id="${item.name}" class="modal">
                         <div class="picture-content">
-                            <button type="button" class="modalClose" onclick="closeModal('${x.name}')" name="${x.name}">Close</button>
-                            <img src="${x.url}" alt="iphone">
+                            <button type="button" class="modalClose" onclick="closeModal('${item.name}')" name="${item.name}">Close</button>
+                            <img src="${item.url}" alt="iphone">
                         </div>
                     </div>`);
             }
         });
     </script>
-    <title>Modal Testing</title>
 </head>
 <body>
     <div id="wrapper">
@@ -32,7 +32,7 @@
 
         </nav>
         <div id="theModals">
-            
+
         </div>
 
     </div>

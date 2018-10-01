@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        h1{
+            margin-left: 500px;
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button{
+            width: 150px;
+            font-size: 25px;
+            margin-left: 65px;
         }
         
         /* The Modal (background) */
@@ -50,22 +59,47 @@
     </style>
 </head>
 <body>
-    <!-- Trigger/Open The Modal -->
-    <button class="Btn" name="iPhone">iPhone</button>
-    <button class="Btn" name="macBook">MacBook</button>
+    <div id="wrapper">
+        <h1>Modal Testing</h1>
+        <nav>
+            <button class="item" name="iPhone">iPhone</button>
+            <button class="item" name="macBook">MacBook</button>
+            <button class="item" name="car">Car</button>
+            <button class="item" name="tv">T.V.</button>
+            <button class="item" name="bike">Bike</button>
+        </nav>
 
-    <!-- The Modals -->
-    <div id="iPhone" class="modal">
-        <div class="picture-content">
-            <span class="modalClose">Close</span>
-            <img src="https://amp.businessinsider.com/images/59c29dcb2488492b395ca43e-960-623.jpg" alt="">
+        <!-- The Modals -->
+        <div id="iPhone" class="modal">
+            <div class="picture-content">
+                <span class="modalClose">Close</span>
+                <img src="https://amp.businessinsider.com/images/59c29dcb2488492b395ca43e-960-623.jpg" alt="iphone">
+            </div>
         </div>
-    </div>
 
-    <div id="macBook" class="modal">
-        <div class="picture-content">
-            <span class="modalClose">Close</span>
-            <img src="https://cnet4.cbsistatic.com/img/s7OzxR8Y3xxOlegTpRQW3CuZPuk=/830x467/2017/06/06/349b7e65-a855-44f0-ae0a-6610ebca0809/apple-macbook-pro-12-inch-2017-4181.jpg" alt="">
+        <div id="macBook" class="modal">
+            <div class="picture-content">
+                <span class="modalClose">Close</span>
+                <img src="https://cnet4.cbsistatic.com/img/s7OzxR8Y3xxOlegTpRQW3CuZPuk=/830x467/2017/06/06/349b7e65-a855-44f0-ae0a-6610ebca0809/apple-macbook-pro-12-inch-2017-4181.jpg" alt="macbook">
+            </div>
+        </div>
+        <div id="car" class="modal">
+            <div class="picture-content">
+                <span class="modalClose">Close</span>
+                <img src="https://imgct2.aeplcdn.com/img/800x600/car-data/big/honda-city-image-9579.png?v=29" alt="car">
+            </div>
+        </div>
+        <div id="tv" class="modal">
+            <div class="picture-content">
+                <span class="modalClose">Close</span>
+                <img src="http://imshopping.rediff.com/imgshop/300-400/shopping/pixs/25424/b/bush32._bush-32-inch-curved-led-tv.jpg" alt="tv">
+            </div>
+        </div>
+        <div id="bike" class="modal">
+            <div class="picture-content">
+                <span class="modalClose">Close</span>
+                <img src="https://imgd.aeplcdn.com//1056x594//bw/models/tvs-apache-rtr-160-4v.jpg?20180813151835" alt="bike">
+            </div>
         </div>
     </div>
 
@@ -80,7 +114,7 @@
 
         
         window.onclick = function(event){
-            if (event.target.classList.contains('Btn')){
+            if (event.target.classList.contains('item')){
                 itemName = event.target.name
                 itemContent = document.getElementById(itemName);
                 itemContent.style.display = "block";

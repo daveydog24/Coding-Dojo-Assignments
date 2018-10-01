@@ -4,11 +4,11 @@ function Node(val) {
     this.right = null;
 }
 
-function BinarySearchTree() {
+function BST() {
     this.root = null;
 }
 
-BinarySearchTree.prototype.isBST = function (node) {
+BST.prototype.isBST = function (node) {
     if (!node) {
         return true; 
     }
@@ -28,7 +28,7 @@ BinarySearchTree.prototype.isBST = function (node) {
     return true;  
 }
 
-BinarySearchTree.prototype.height = function (node) {
+BST.prototype.height = function (node) {
     if (!node) {
         return 0;
     }
@@ -38,7 +38,7 @@ BinarySearchTree.prototype.height = function (node) {
     return Math.max(leftHeight, rightHeight) + 1;
 }
 
-BinarySearchTree.prototype.push = function(val) {
+BST.prototype.push = function(val) {
     var root = this.root;
  
     if (!root) {
@@ -67,4 +67,20 @@ BinarySearchTree.prototype.push = function(val) {
         }
     }
 }
+
+x = new BST()
+console.log(x);
+
+x.push(10);
+x.push(2);
+x.push(3);
+x.push(4);
+x.push(22);
+x.push(212);
+x.push(12);
+x.push(7);
+x.push(1);
+
+console.log(x);
+
     

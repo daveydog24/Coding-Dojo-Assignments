@@ -24,7 +24,8 @@
                     url = item.url
                 } else {
                     url = 'https://www.freeiconspng.com/uploads/error-icon-28.png'
-                    item.message = "You didnt provide a correct URL";
+                    // item.message = "You didnt provide a correct URL";
+                    // $('.errors').append(`<p>${item.message}</p>`);
                 }
                 $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
                 $('#theModals').append(`
@@ -32,13 +33,9 @@
                         <div class="picture-content">
                             <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
                             <img src="${url}" alt="iphone">
-                            <p>${item.message}</p>
                             </div>
                             </div>`);
                 }
-                // if (item.message){
-                //     $('.picture-content').append(`<p>${item.message}</p>`);
-                // }
             });
     </script>
 </head>
@@ -48,9 +45,9 @@
         <nav id="buttons">
 
         </nav>
+        
         <div id="theModals">
-            <div id="errors">
-
+            <div class="errors">
             </div>
         </div>
 

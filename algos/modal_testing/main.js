@@ -19,6 +19,9 @@ data = [
     {
         name: "Bike",
         url: "https://imgd.aeplcdn.com//1056x594//bw/models/tvs-apache-rtr-160-4v.jpg?20180813151835"
+    },
+    {
+        name: "Candy",
     }
 ]
 

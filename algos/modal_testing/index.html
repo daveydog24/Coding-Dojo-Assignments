@@ -11,18 +11,35 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
             items = data;
-	
+            
             for (item of items){
-                $('#buttons').append(`<button type="button" onclick="openModal('${item.name}')" name="${item.name}">${item.name}</button>`);
+                item.message = null;
+
+                if (item.name){
+                    name = item.name
+                } else {
+                    name = 'UNDEFINED VARIABLE'
+                }
+                if (item.url){
+                    url = item.url
+                } else {
+                    url = 'https://www.freeiconspng.com/uploads/error-icon-28.png'
+                    item.message = "You didnt provide a correct URL";
+                }
+                $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
                 $('#theModals').append(`
-                    <div id="${item.name}" class="modal">
+                    <div id="${name}" class="modal">
                         <div class="picture-content">
-                            <button type="button" class="modalClose" onclick="closeModal('${item.name}')" name="${item.name}">Close</button>
-                            <img src="${item.url}" alt="iphone">
-                        </div>
-                    </div>`);
-            }
-        });
+                            <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
+                            <img src="${url}" alt="iphone">
+                            <p>${item.message}</p>
+                            </div>
+                            </div>`);
+                }
+                // if (item.message){
+                //     $('.picture-content').append(`<p>${item.message}</p>`);
+                // }
+            });
     </script>
 </head>
 <body>
@@ -32,7 +49,9 @@
 
         </nav>
         <div id="theModals">
+            <div id="errors">
 
+            </div>
         </div>
 
     </div>

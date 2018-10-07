@@ -21,8 +21,8 @@ data = [
         url: "https://imgd.aeplcdn.com//1056x594//bw/models/tvs-apache-rtr-160-4v.jpg?20180813151835"
     },
     {
-        name: "Candy",
-        // movie: "david.move",
+        name: "BABE <3",
+        // movie: "babe.move",
     }
 ]
 

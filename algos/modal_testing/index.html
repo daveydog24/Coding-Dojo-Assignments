@@ -22,21 +22,30 @@
                 }
                 if (item.url){
                     url = item.url;
+                    $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
+                    $('#theModals').append(`
+                        <div id="${name}" class="modal">
+                            <div class="picture-content">
+                                <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
+                                <img src="${url}" alt="iphone">
+                                </div>
+                                </div>`);
                 } else {
-                    url = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
+                    $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
+                    $('#theModals').append(`
+                        <div id="${name}" class="modal">
+                            <div class="picture-content">
+                                <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
+                                <video src="babe.mov" width="300" height="300" autoplay loop controls></video>
+                                </div>
+                                </div>`);
+                    $('#media').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
+                    // url = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
                     // item.message = "You didnt provide a correct URL";
                     // $('.errors').append(`<p>${item.message}</p>`);
                 }
-                $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
-                $('#theModals').append(`
-                    <div id="${name}" class="modal">
-                        <div class="picture-content">
-                            <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
-                            <img src="${url}" alt="iphone">
-                            </div>
-                            </div>`);
-                }
-            });
+            }
+        });
     </script>
 </head>
 <body>

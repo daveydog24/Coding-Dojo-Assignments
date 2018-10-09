@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta title="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Modal Testing</title>
@@ -15,33 +15,33 @@
             for (item of items){
                 item.message = null;
 
-                if (item.name){
-                    name = item.name;
+                if (item.title){
+                    title = item.title;
                 } else {
-                    name = 'UNDEFINED VARIABLE';
+                    title = 'UNDEFINED VARIABLE';
                 }
-                if (item.url){
-                    url = item.url;
-                    $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
+                if (item.image){
+                    image = item.image;
+                    $('#buttons').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
                     $('#theModals').append(`
-                        <div id="${name}" class="modal">
+                        <div id="${title}" class="modal">
                             <div class="picture-content">
-                                <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
-                                <img src="${url}" alt="iphone">
+                                <button type="button" class="modalClose" onclick="closeModal('${title}')" title="${title}">Close</button>
+                                <img src="${image}" alt="iphone">
                                 </div>
                                 </div>`);
                 } else {
-                    $('#buttons').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
+                    $('#buttons').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
                     $('#theModals').append(`
-                        <div id="${name}" class="modal">
+                        <div id="${title}" class="modal">
                             <div class="picture-content">
-                                <button type="button" class="modalClose" onclick="closeModal('${name}')" name="${name}">Close</button>
+                                <button type="button" class="modalClose" onclick="closeModal('${title}')" title="${title}">Close</button>
                                 <video src="babe.mov" width="300" height="300" autoplay loop controls></video>
                                 </div>
                                 </div>`);
-                    $('#media').append(`<button type="button" onclick="openModal('${name}')" name="${name}">${name}</button>`);
-                    // url = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
-                    // item.message = "You didnt provide a correct URL";
+                    $('#media').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
+                    // image = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
+                    // item.message = "You didnt provide a correct image";
                     // $('.errors').append(`<p>${item.message}</p>`);
                 }
             }

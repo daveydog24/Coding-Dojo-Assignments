@@ -2,7 +2,7 @@
 data = [
     {
         title: "iPhone",
-        image: "https://amp.businessinsider.com/images/59c29dcb2488492b395ca43e-960-623.jpg",,
+        image: "https://amp.businessinsider.com/images/59c29dcb2488492b395ca43e-960-623.jpg",
         description: " Movie Description would normally go here"
     },
     {
@@ -17,7 +17,7 @@ data = [
     },
     {
         title: "Television",
-        image: "http://imshopping.rediff.com/imgshop/300-400/shopping/pixs/25424/b/bush32._bush-32-inch-curved-led-tv.jpg",,
+        image: "http://imshopping.rediff.com/imgshop/300-400/shopping/pixs/25424/b/bush32._bush-32-inch-curved-led-tv.jpg",
         description: " Movie Description would normally go here"
     },
     {
@@ -27,7 +27,9 @@ data = [
     {
         title: "BABE <3",
         // movie: "babe.move",
-        title: ""
+    },
+    {
+        title: "The Book of Eli",
         image: "https://imgd.aeplcdn.com//1056x594//bw/models/tvs-apache-rtr-160-4v.jpg?20180813151835",
         description: " Movie Description would normally go here"
     }

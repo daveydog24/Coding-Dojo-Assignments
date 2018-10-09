@@ -20,6 +20,13 @@
                 } else {
                     title = 'UNDEFINED VARIABLE';
                 }
+                
+                if (item.description){
+                    description = item.description;
+                } else {
+                    description = 'UNDEFINED VARIABLE';
+                }
+                
                 if (item.image){
                     image = item.image;
                     $('#buttons').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
@@ -28,18 +35,22 @@
                             <div class="picture-content">
                                 <button type="button" class="modalClose" onclick="closeModal('${title}')" title="${title}">Close</button>
                                 <img src="${image}" alt="iphone">
+                                <p> ${description} </p>
                                 </div>
                                 </div>`);
-                } else {
+                } 
+                else if (item.trailer){
+                    trailer = item.trailer
                     $('#buttons').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
                     $('#theModals').append(`
                         <div id="${title}" class="modal">
                             <div class="picture-content">
                                 <button type="button" class="modalClose" onclick="closeModal('${title}')" title="${title}">Close</button>
-                                <video src="babe.mov" width="300" height="300" autoplay loop controls></video>
+                                <video src="${trailer}" width="300" height="300" autoplay loop controls></video>
                                 </div>
                                 </div>`);
-                    $('#media').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
+                    // trying to add errors
+                    // $('#media').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
                     // image = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
                     // item.message = "You didnt provide a correct image";
                     // $('.errors').append(`<p>${item.message}</p>`);

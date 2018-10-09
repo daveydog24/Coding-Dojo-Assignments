@@ -25,12 +25,8 @@ data = [
         description: " Movie Description would normally go here"
     },
     {
-        title: "BABE <3",
-        // movie: "babe.move",
-    },
-    {
         title: "The Book of Eli",
-        image: "https://imgd.aeplcdn.com//1056x594//bw/models/tvs-apache-rtr-160-4v.jpg?20180813151835",
+        trailer: "bookOfEli.mp4",
         description: " Movie Description would normally go here"
     }
 ]

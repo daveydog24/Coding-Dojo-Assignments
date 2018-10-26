@@ -25,6 +25,11 @@ data = [
         description: " Movie Description would normally go here"
     },
     {
+        title: "Test",
+        image: undefined,
+        description: undefined
+    },
+    {
         title: "The Book of Eli",
         trailer: "bookOfEli.mp4",
         description: " Movie Description would normally go here"

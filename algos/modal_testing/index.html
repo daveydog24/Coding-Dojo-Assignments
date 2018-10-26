@@ -9,14 +9,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function() {
             items = data;
             
-            for (item of items){
+            for (item of items) {
                 item.message = null;
                 
                 // stores title
-                if (item.title){
+                if (item.title) {
                     title = item.title;
                 } else {
                     title = 'UNDEFINED VARIABLE';
@@ -41,7 +41,7 @@
                                 <p> ${description} </p>
                                 </div>
                                 </div>`);
-                } else if (item.trailer){
+                } else if (item.trailer) {
                     trailer = item.trailer
                     $('#buttons').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
                     $('#theModals').append(`
@@ -51,14 +51,7 @@
                                 <video src="${trailer}" width="300" height="300" autoplay loop controls></video>
                                 </div>
                                 </div>`);
-                } 
-                // trying to add errors in this spot. check for no video or images
-                // else {
-                // $('#media').append(`<button type="button" onclick="openModal('${title}')" title="${title}">${title}</button>`);
-                // image = 'https://www.freeiconspng.com/uploads/error-icon-28.png';
-                // item.message = "You didnt provide a correct image";
-                // $('.errors').append(`<p>${item.message}</p>`);
-                // }
+                }
             }
         });
     </script>

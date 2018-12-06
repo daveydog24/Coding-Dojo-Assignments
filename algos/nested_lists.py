@@ -7,7 +7,7 @@ store them in a nested list and print the name(s) of any student(s) having
 the second lowest grade.
 
 Note: If there are multiple students with the same grade, order their names
- alphabetically and print each name on a new line.
+alphabetically and print each name on a new line.
 
 Input Format
 
@@ -54,3 +54,20 @@ belongs to both Harry and Berry, so we order their names alphabetically
 and print each name on a new line.
 
 '''
+
+def nested_lists(num_of_students, students):
+    top_student = None
+
+    return top_student
+
+
+students = 5 
+python_students = [
+    ['Harry', 37.21], 
+    ['Berry', 37.21], 
+    ['Tina', 37.2], 
+    ['Akriti', 41], 
+    ['Harsh', 39]
+    ]
+
+nested_lists(students, python_students)

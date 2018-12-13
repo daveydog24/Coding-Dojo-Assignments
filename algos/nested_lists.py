@@ -57,11 +57,20 @@ and print each name on a new line.
 
 def nested_lists(num_of_students, students):
     top_student = None
+    count = 0
+    print students
+    sorted_students = sorted(students[1])
 
-    return top_student
+    print students
+
+    # for student in students:
+    #     print(students[count][0])
+    #     count += 1
+
+    # return top_student
 
 
-students = 5 
+amount_of_students = 5 
 python_students = [
     ['Harry', 37.21], 
     ['Berry', 37.21], 
@@ -70,4 +79,4 @@ python_students = [
     ['Harsh', 39]
     ]
 
-nested_lists(students, python_students)
+nested_lists(amount_of_students, python_students)

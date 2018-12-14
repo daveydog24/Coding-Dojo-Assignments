@@ -1,4 +1,4 @@
-Write for me a function that does the following:
+/* Write for me a function that does the following:
 
 Input: 3 separate Integer values
 Output:  a 7-character length string representing the hexadecimal value of the input integers in the format of “#xxxxxx”
@@ -14,25 +14,45 @@ Notes:
 
 0=0, 1=1, 10-a, 11-b, 12-c, 13-d, 14-e, 15-f
 
-Function createHexadecimal(int1, int2, int3) {
-	//validations
-	Let finalString = ‘’
-	
-	Return getValue(int1) + getValue(int2) + getValue (int3)
+*/
+
+function createHexadecimal(int1, int2, int3) {
+	return '#' + getValue(int1) + getValue(int2) + getValue (int3);
 }
 
-Function getValue(int)  //9; 208; 194 
-{
-	Return mutate(actualInt(int)) + mutate(intRemainder(int));
-}  /”09” ; D0; C2
+function getValue(int) {
+	return mutate(actualInt(int)) + mutate(intRemainder(int));
+}  
 
 function mutate(int){
-Letters = {0: 0, 1: 1, 10: a, 11: b, 12: c, 13: d, 14: e, 15-f}
-hexidecimal  = Letters[int]
-
-	Return hexidecimal 
+    var letters = {
+        '0': '0', 
+        '1': '1', 
+        '2': '2', 
+        '3': '3', 
+        '4': '4', 
+        '5': '5', 
+        '6': '6', 
+        '7': '7', 
+        '8': '8', 
+        '9': '9',
+        '10': 'A', 
+        '11': 'B', 
+        '12': 'C', 
+        '13': 'D', 
+        '14': 'E', 
+        '15':'F'
+    };
+    let hexidecimal = letters[int];
+	return hexidecimal;
 }
 
-Function actualInt(int){
-	Return (math.floor(int/16));
+function intRemainder(int){
+    return (int % 16);
 }
+
+function actualInt(int){
+	return (Math.floor(int/16));
+}
+
+console.log(createHexadecimal(09,208,194))

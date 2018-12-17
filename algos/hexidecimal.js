@@ -21,11 +21,11 @@ function createHexadecimal(int1, int2, int3) {
 }
 
 function getValue(int) {
-	return mutate(actualInt(int)) + mutate(intRemainder(int));
+	return changeToHex(Math.floor(int / 16)) + changeToHex(int % 16);
 }  
 
-function mutate(int){
-    var letters = {
+function changeToHex(int){
+    let letters = {
         '0': '0', 
         '1': '1', 
         '2': '2', 
@@ -47,12 +47,5 @@ function mutate(int){
 	return hexidecimal;
 }
 
-function intRemainder(int){
-    return (int % 16);
-}
-
-function actualInt(int){
-	return (Math.floor(int/16));
-}
-
 console.log(createHexadecimal(09,208,194))
+console.log(createHexadecimal(132,83,83))

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bracket Challenge</title>
+        <!-- <link rel="stylesheet" type="text/css" href="disney.css"> -->
+        <script type="text/javascript" src="./BasketballTeams.js"></script>
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            // import BasketballTeams from '/modules/BasketballTeams.js'
+            let BasketballTeams = [
+                { West: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
+                { East: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
+                { South: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
+                { North: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
+            ];
+            for (items of BasketballTeams) {
+                for (item in items['West']){
+                    
+                    console.log(item)
+                }
+                for (item in items['East']){
+                    console.log(item)
+                }
+                for (item in items['South']){
+                    console.log(item)
+                }
+                for (item in items['North']){
+                    console.log(item)
+                }
+            }
+
+			// $(document).ready(function() {
+			// 	$('li').on('click', function(){
+			// 		$(this).next('li').remove();
+			// 	})
+			// })
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="header"></div>
+            <div class="main">
+                <div class="left_side"></div>
+                <div class="right_side"></div>
+            </div>
+            <div class="footer"></div>
+            </div>
+    </body>
+</html>

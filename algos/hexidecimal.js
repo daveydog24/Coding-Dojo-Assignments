@@ -41,7 +41,7 @@ function changeToHex(int){
         '12': 'C', 
         '13': 'D', 
         '14': 'E', 
-        '15':'F'
+        '15': 'F'
     };
     let hexidecimal = letters[int];
 	return hexidecimal;

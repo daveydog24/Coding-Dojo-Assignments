@@ -5,48 +5,120 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Bracket Challenge</title>
-        <!-- <link rel="stylesheet" type="text/css" href="disney.css"> -->
-        <script type="text/javascript" src="./BasketballTeams.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <!-- <script type="text/javascript" src="./BasketballTeams.js"></script> -->
         <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
         <script type="text/javascript">
             // import BasketballTeams from '/modules/BasketballTeams.js'
             let BasketballTeams = [
-                { West: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
-                { East: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
-                { South: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
-                { North: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] }, 
+                ["West", ["Duke",2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] ],
+                ["East", [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] ],
+                ["South", [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] ],
+                ["North", [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] ],
             ];
-            for (items of BasketballTeams) {
-                for (item in items['West']){
-                    
-                    console.log(item)
+            $(document).ready(function () {
+                for (items of BasketballTeams) {
+                    let conference = items[0];
+                    let teams = items[1];
+                    let count = 1;
+                    for (team of teams) {
+                        document.getElementById(conference).innerHTML += `<li>${count}: ${team} </li>`;
+                        count++;
+                    }
                 }
-                for (item in items['East']){
-                    console.log(item)
+                $('li').on('dblclick', function(){
+                    let string = this.innerHTML.split(":");
+                    string = string[1].trim();
+                    alert(string)
+					// $(this).next('li').remove();
+			    })
+            ```
+                DRAGGIN AN ELEMENT
+            dragElement(document.getElementById("mydiv"));
+
+            function dragElement(elmnt) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
                 }
-                for (item in items['South']){
-                    console.log(item)
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
                 }
-                for (item in items['North']){
-                    console.log(item)
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
                 }
             }
+            $('li').on('click', function(){
+                dragElement(this));
+            })
+            ```
+        });
+            
+        
+			
 
-			// $(document).ready(function() {
-			// 	$('li').on('click', function(){
-			// 		$(this).next('li').remove();
-			// 	})
-			// })
         </script>
     </head>
     <body>
         <div id="wrapper">
-            <div class="header"></div>
+            <div class="header">
+                <p>Round of 64</p>
+                <p>Round of 32</p>
+                <p>Sweet 16</p>
+                <p>Elite 8</p>
+                <p>Final Four</p>
+                <p>Championship</p>
+                <p>Final Four</p>
+                <p>Elite 8</p>
+                <p>Sweet 16</p>
+                <p>Round of 32</p>
+                <p>Round of 64</p>
+            </div>
             <div class="main">
-                <div class="left_side"></div>
-                <div class="right_side"></div>
+                <div class="left_side">
+                    <ul id="West">West</ul>    
+                    <ul id="East">East</ul>
+                </div>
+                <div class="right_side">
+                    <ul id="South">South</ul>
+                    <ul id="North">North</ul>
+                </div>
             </div>
             <div class="footer"></div>
+            </div>
+            <div id="mydiv">
+                    <div id="mydivheader">Click here to move</div>
+                    <p>Move</p>
+                    <p>this</p>
+                    <p>DIV</p>
             </div>
     </body>
 </html>

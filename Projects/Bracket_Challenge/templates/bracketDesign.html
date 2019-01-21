@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../static/bracket.css">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').on('dblclick', function(){
+                let winner = this.innerHTML;
+                let winner_info = this.className;
+                winner_info = winner_info.split("_");
+
+                if (winner_info.length === 2) {
+
+                    let region = winner_info[0]; //grabs the region
+                    let winner_group = winner_info[1]; //stores the group from which the winner came
+                    let search_string = `${region}_32_${winner_group}`; // creates unique string based on previous selections
+                    let x = document.getElementsByClassName(search_string)[0].innerHTML = winner; //replaces round of 32 slot
+
+                } else if (winner_info.length === 3) {
+                    let region = winner_info[0]; //grabs the region
+                    let team_slot = winner_info[2]; //finds the slot which the team is in
+
+                    if (team_slot === '1' || team_slot === '2') {
+                        let search_string = `${region}_sweet_sixteen_1`;
+                        document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                    } else if (team_slot === '3' || team_slot === '4') {
+                        let search_string = `${region}_sweet_sixteen_2`;
+                        document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                    } else if (team_slot === '5' || team_slot === '6') {
+                        let search_string = `${region}_sweet_sixteen_3`;
+                        document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                    } else if (team_slot === '7' || team_slot === '8') {
+                        let search_string = `${region}_sweet_sixteen_4`;
+                        document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                    } 
+                } else if (winner_info.length === 4) {
+                    let region = winner_info[0];
+                    let team_slot = winner_info[3];
+                    let search_string = `${region}_elite_8_winner_`
+
+                    if (team_slot === '1' || team_slot === '2'){
+                        search_string += 'top';
+                    } else {
+                        search_string += 'bottom';
+                    }
+                    document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                } else if (winner_info.length === 5) {
+                    let region = winner_info[0];
+                    let search_string = `${region}_champion`;
+                    // updates the region and final four slots for champion
+                    document.getElementsByClassName(search_string)[0].innerHTML = winner;
+                    document.getElementsByClassName(search_string)[1].innerHTML = winner;
+                }
+            })
+            $('h3').on('dblclick', function(){
+                let region = this.className.split("_")[0];
+                if (region === 'midwest' || region == "east"){
+                    document.getElementById("right_champion").innerHTML = this.innerHTML;
+                } else{
+                    document.getElementById("left_champion").innerHTML = this.innerHTML;
+                }
+            });
+            $('h2').on('dblclick', function(){
+                document.getElementById("bracket_champion").innerHTML = this.innerHTML;
+            });
+        });
+
+        // NEED TO JUST MAKE EVERYTHING A FUNCTION TO CALL. This way you can pass in THIS or an object to change an element 
+        // and if a new selection is changed then you can call the functions to erase all the future slots of advancement 
+        // second paramater is how far it needs to advance. if the number is greater than > 1 than we should reduce the count
+        // and continue to call the nect functions down the line. if statement can be first or last line and will be ASYNC
+        // function AdvancetoRoundOf32(team, roundsToChange)
+        // function advanceToSweet16(team, roundsToChange)
+        // function advanceToElite8(team, roundsToChange)
+        // function advancetoFianlFour(team, roundsToChange)
+        // function advanceToFinals(team, roundsToChange)
+        // function advanceChampion(team, roundsToChange)
+    </script>
+
+    <title>Bracket Design</title>
+</head>
+<body>
+    <div id="left">
+        <div id="south">
+            <h1>South</h1>
+            <div class="round_of_64">
+                <ul>
+                    <li class="south_1">Washington</li>
+                    <li class="south_1">Alabama</li>
+                    <br>
+                    <li class="south_2">Duke</li>
+                    <li class="south_2">North Carolina</li>
+                    <br>
+                    <li class="south_3">UNC</li>
+                    <li class="south_3">Arizona</li>
+                    <br>
+                    <li class="south_4">Michigan</li>
+                    <li class="south_4">Ohio State</li>
+                    <br>
+                    <li class="south_5">Georgetown</li>
+                    <li class="south_5">Wake Forest</li>
+                    <br>
+                    <li class="south_6">Indiana</li>
+                    <li class="south_6">Oregon</li>
+                    <br>
+                    <li class="south_7">Baylor</li>
+                    <li class="south_7">West Virginia</li>
+                    <br>
+                    <li class="south_8">Hawaii</li>
+                    <li class="south_8">UCLA</li>
+                </ul>
+            </div>
+            <div class="round_of_32">
+                <ul>
+                    <li class="south_32_1">1/16</li>
+                    <li class="south_32_2">8/9</li>
+                    <br>
+                    <li class="south_32_3">5/12</li>
+                    <li class="south_32_4">4/13</li>
+                    <br>
+                    <li class="south_32_5">6/11</li>
+                    <li class="south_32_6">3/14</li>
+                    <br>
+                    <li class="south_32_7">7/10</li>
+                    <li class="south_32_8">2/15</li>
+                </ul>
+            </div>
+            <div class="sweet_sixteen">
+                <ul>
+                    <li class="south_sweet_sixteen_1"> 1/16/8/9</li>
+                    <li class="south_sweet_sixteen_2">5/12/4/13</li>
+                    <br>
+                    <li class="south_sweet_sixteen_3">6/11/3/14</li>
+                    <li class="south_sweet_sixteen_4">7/10/2/15</li>
+                </ul>
+            </div>
+            <div class="elite_eight">
+                <ul>
+                    <li class="south_elite_8_winner_top">Top</li>
+                    <br>
+                    <li class="south_elite_8_winner_bottom">Bottom</li>
+                </ul>
+            </div>
+            <div class="final_four">
+                <ul>
+                    <li class="south_champion">Champ</li>
+                </ul>
+            </div>
+        </div>
+        <div id="west">
+            <h1>West</h1>
+            <div class="round_of_64">
+                <ul>
+                    <li class="west_1">1</li>
+                    <li class="west_1">16</li>
+                    <br>
+                    <li class="west_2">8</li>
+                    <li class="west_2">9</li>
+                    <br>
+                    <li class="west_3">5</li>
+                    <li class="west_3">12</li>
+                    <br>
+                    <li class="west_4">4</li>
+                    <li class="west_4">13</li>
+                    <br>
+                    <li class="west_5">6</li>
+                    <li class="west_5">Duke</li>
+                    <br>
+                    <li class="west_6">3</li>
+                    <li class="west_6">14</li>
+                    <br>
+                    <li class="west_7">7</li>
+                    <li class="west_7">10</li>
+                    <br>
+                    <li class="west_8">2</li>
+                    <li class="west_8">15</li>
+                </ul>
+            </div>
+            <div class="round_of_32">
+                <ul>
+                    <li class="west_32_1">1/16</li>
+                    <li class="west_32_2">8/9</li>
+                    <br>
+                    <li class="west_32_3">5/12</li>
+                    <li class="west_32_4">4/13</li>
+                    <br>
+                    <li class="west_32_5">6/11</li>
+                    <li class="west_32_6">3/14</li>
+                    <br>
+                    <li class="west_32_7">7/10</li>
+                    <li class="west_32_8">2/15</li>
+                </ul>
+            </div>
+            <div class="sweet_sixteen">
+                <ul>
+                    <li class="west_sweet_sixteen_1"> 1/16/8/9</li>
+                    <li class="west_sweet_sixteen_2">5/12/4/13</li>
+                    <br>
+                    <li class="west_sweet_sixteen_3">6/11/3/14</li>
+                    <li class="west_sweet_sixteen_4">7/10/2/15</li>
+                </ul>
+            </div>
+            <div class="elite_eight">
+                <ul>
+                    <li class="west_elite_8_winner_top">Top</li>
+                    <br>
+                    <li class="west_elite_8_winner_bottom">Bottom</li>
+                </ul>
+            </div>
+            <div class="final_four">
+                <ul>
+                    <li class="west_champion">Champ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <div id="east">
+            <h1>East</h1>
+            <div class="round_of_64">
+                <ul>
+                    <li class="east_1">Washington</li>
+                    <li class="east_1">16</li>
+                    <br>
+                    <li class="east_2">8</li>
+                    <li class="east_2">9</li>
+                    <br>
+                    <li class="east_3">5</li>
+                    <li class="east_3">12</li>
+                    <br>
+                    <li class="east_4">4</li>
+                    <li class="east_4">13</li>
+                    <br>
+                    <li class="east_5">6</li>
+                    <li class="east_5">11</li>
+                    <br>
+                    <li class="east_6">3</li>
+                    <li class="east_6">14</li>
+                    <br>
+                    <li class="east_7">7</li>
+                    <li class="east_7">10</li>
+                    <br>
+                    <li class="east_8">UNC</li>
+                    <li class="east_8">15</li>
+                </ul>
+            </div>
+            <div class="round_of_32">
+                <ul>
+                    <li class="east_32_1">1/16</li>
+                    <li class="east_32_2">8/9</li>
+                    <br>
+                    <li class="east_32_3">5/12</li>
+                    <li class="east_32_4">4/13</li>
+                    <br>
+                    <li class="east_32_5">6/11</li>
+                    <li class="east_32_6">3/14</li>
+                    <br>
+                    <li class="east_32_7">7/10</li>
+                    <li class="east_32_8">2/15</li>
+                </ul>
+            </div>
+            <div class="sweet_sixteen">
+                <ul>
+                    <li class="east_sweet_sixteen_1"> 1/16/8/9</li>
+                    <li class="east_sweet_sixteen_2">5/12/4/13</li>
+                    <br>
+                    <li class="east_sweet_sixteen_3">6/11/3/14</li>
+                    <li class="east_sweet_sixteen_4">7/10/2/15</li>
+                </ul>
+            </div>
+            <div class="elite_eight">
+                <ul>
+                    <li class="east_elite_8_winner_top">Top</li>
+                    <br>
+                    <li class="east_elite_8_winner_bottom">Bottom</li>
+                </ul>
+            </div>
+            <div class="final_four">
+                <ul>
+                    <li class="east_champion">Champ</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h1>Midwest</h1>
+            <div class="round_of_64">
+                <ul>
+                    <li class="midwest_1">1</li>
+                    <li class="midwest_1">16</li>
+                    <br>
+                    <li class="midwest_2">8</li>
+                    <li class="midwest_2">9</li>
+                    <br>
+                    <li class="midwest_3">Arizona</li>
+                    <li class="midwest_3">12</li>
+                    <br>
+                    <li class="midwest_4">4</li>
+                    <li class="midwest_4">13</li>
+                    <br>
+                    <li class="midwest_5">6</li>
+                    <li class="midwest_5">11</li>
+                    <br>
+                    <li class="midwest_6">3</li>
+                    <li class="midwest_6">14</li>
+                    <br>
+                    <li class="midwest_7">7</li>
+                    <li class="midwest_7">10</li>
+                    <br>
+                    <li class="midwest_8">2</li>
+                    <li class="midwest_8">15</li>
+                </ul>
+            </div>
+            <div class="round_of_32">
+                <ul>
+                    <li class="midwest_32_1">1/16</li>
+                    <li class="midwest_32_2">8/9</li>
+                    <br>
+                    <li class="midwest_32_3">5/12</li>
+                    <li class="midwest_32_4">4/13</li>
+                    <br>
+                    <li class="midwest_32_5">6/11</li>
+                    <li class="midwest_32_6">3/14</li>
+                    <br>
+                    <li class="midwest_32_7">7/10</li>
+                    <li class="midwest_32_8">2/15</li>
+                </ul>
+            </div>
+            <div class="sweet_sixteen">
+                <ul>
+                    <li class="midwest_sweet_sixteen_1"> 1/16/8/9</li>
+                    <li class="midwest_sweet_sixteen_2">5/12/4/13</li>
+                    <br>
+                    <li class="midwest_sweet_sixteen_3">6/11/3/14</li>
+                    <li class="midwest_sweet_sixteen_4">7/10/2/15</li>
+                </ul>
+            </div>
+            <div class="elite_eight">
+                <ul>
+                    <li class="midwest_elite_8_winner_top">Top</li>
+                    <br>
+                    <li class="midwest_elite_8_winner_bottom">Bottom</li>
+                </ul>
+            </div>
+            <div class="final_four">
+                <ul>
+                    <li class="midwest_champion">Champ</li>
+                </ul>
+            </div>
+        </div>
+        <div id="middle">
+            <h1>Final Four</h1>
+            <div id="final_four">
+                <h3 class="south_champion">1</h3>
+                <h3 class="west_champion">2</h3>
+                <h3 class="east_champion">3</h3>
+                <h3 class="midwest_champion">4</h3>
+            </div>
+            <br>
+            <h1>Championship</h1>
+            <div id="finals">
+                <h2 id="left_champion">Left Champion</h2>
+                <h2 id="right_champion">Right Champion</h2>
+            </div>
+            <br>
+            <h1>Champion</h1>
+            <div id="champion">
+                <h1 id="bracket_champion">Champion</h1>
+            </div>
+        </div>
+    </body>
+</html>
